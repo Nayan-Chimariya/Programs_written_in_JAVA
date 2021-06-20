@@ -3,10 +3,8 @@ package com.nayan;
 import java.text.NumberFormat;
 import java.util.Scanner;
 
-public class Main {
-
+public class mortgageCalculator {
     public static void main(String[] args) {
-
         final byte MONTH_IN_YEARS = 12;
         final byte PERCENT = 100;
 
@@ -46,11 +44,10 @@ public class Main {
         int numberOfPayments = timeInYears * MONTH_IN_YEARS;
 
         double Mortgage = principal * (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments) )
-                                    / (Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1);
+                / (Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1);
 
         String formattedMortgage = NumberFormat.getCurrencyInstance().format(Mortgage);
 
         System.out.println("Mortgage : " + formattedMortgage );
     }
-
 }
